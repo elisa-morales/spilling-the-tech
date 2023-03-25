@@ -17,7 +17,6 @@ async function fecthAllNews() {
     .then((res) => {
       const newsData = _.get(res, "data", "")
       newsId = newsData.slice(count, count + 10).forEach(fetchNewsId)
-      console.log("bu")
     })
     .catch((err) => {
       console.log(err)
@@ -30,12 +29,17 @@ async function fetchNewsId(id) {
     .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
     .then((res) => {
       const itemData = _.get(res, "data", "")
-      console.log(itemData)
+      renderNews(itemData)
     })
     .catch((err) => {
       console.log(err)
     })
     .finally(() => {})
+}
+
+function renderNews(data) {
+  document.getElementById("prova").innerHTML += `
+  <p>${data.by}</p>`
 }
 
 fecthAllNews()
