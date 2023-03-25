@@ -1,15 +1,10 @@
-import generateJoke from "./generateJoke"
 import axios from "axios"
 import _ from "lodash"
 import "./styles/main.scss"
 
-const jokeBtn = document.getElementById("jokeBtn")
-jokeBtn.addEventListener("click", generateJoke)
-
-generateJoke()
-
 let count = 0
 let newsId = ""
+const loader = document.getElementById("loading")
 
 async function fecthAllNews() {
   await axios
@@ -25,6 +20,7 @@ async function fecthAllNews() {
 }
 
 async function fetchNewsId(id) {
+  loader.classList.add("display")
   await axios
     .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
     .then((res) => {
@@ -34,12 +30,14 @@ async function fetchNewsId(id) {
     .catch((err) => {
       console.log(err)
     })
-    .finally(() => {})
+    .finally(() => {
+      loader.classList.remove("display")
+    })
 }
 
 function renderNews(data) {
-  document.getElementById("prova").innerHTML += `
-  <p>${data.by}</p>`
+  document.getElementById("container").innerHTML += `
+  <div><p>${data.by}</p></div>`
 }
 
 fecthAllNews()
