@@ -37,7 +37,7 @@ async function fetchNewsId(id) {
 
 function renderNews(data) {
   document.getElementById("container").innerHTML += `
-  <div><p>${data.by}</p></div>`
+  <div id="prova"><p>${data.by}</p></div>`
 }
 
 fecthAllNews()
