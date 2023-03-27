@@ -48,11 +48,6 @@ p {
 
 a {
   text-decoration: none;
-  color: $color-title;
-}
-
-a:hover {
-  color: $dark-color;
 }
 
 nav {
@@ -99,7 +94,8 @@ main {
   margin-bottom: 0.5em;
 }
 
-button {
+button,
+button > a {
   background-color: $color-btn;
   color: #fff;
   font-weight: 700;
@@ -143,6 +139,14 @@ footer > p,
 
 .social-icons {
   font-size: 16px;
+}
+
+.bx {
+  color: $color-title;
+}
+
+.bx:hover {
+  color: $dark-color;
 }
 
 #loading {

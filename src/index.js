@@ -36,8 +36,12 @@ async function fetchNewsId(id) {
 }
 
 function renderNews(data) {
-  document.getElementById("container").innerHTML += `
-  <div id="prova"><p>${data.by}</p></div>`
+  document.getElementById("news-wrapper").innerHTML += `
+  <div id="container">
+          <h2>${data.title}</h2>
+          <p>Posted by ${data.by} | ${data.time}</p>
+          <button><a href="${data.url}" target="_blank">Read more</a></button>
+        </div>`
 }
 
 fecthAllNews()
