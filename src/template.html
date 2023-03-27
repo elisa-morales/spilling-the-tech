@@ -7,7 +7,43 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <nav>
+      <div id="nav-icon">☕</div>
+      <h5>Spilling the <span>T</span>ech</h5>
+    </nav>
+
+    <header>
+      <h1>Spilling the <span>T</span>ech</h1>
+      <h3>Latest News from Hacker News API</h3>
+    </header>
     <div id="loading"></div>
-    <div id="container"></div>
+    <main>
+      <div id="news-wrapper">
+        <div id="container">
+          <h2>Title</h2>
+          <p>Posted by Author | 26-03-2023</p>
+          <button>Read more</button>
+        </div>
+      </div>
+
+      <button id="load-more-btn">Load more</button>
+    </main>
+
+    <footer>
+      <p>&#169; 2023 | Elisa Morales</p>
+      <div id="social">
+        <p>💌 contacts</p>
+        <a href="https://www.linkedin.com/in/elisa-morales-copy/" target="_blank" class="social-icons">
+          <i class="bx bxl-linkedin-square"></i>
+        </a>
+
+        <a href="https://www.instagram.com/_toulousemylife/" target="_blank" class="social-icons">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="https://github.com/elisa-morales" target="_blank" class="social-icons">
+          <i class="bx bxl-github"></i>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
