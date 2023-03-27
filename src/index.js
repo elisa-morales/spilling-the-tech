@@ -40,7 +40,7 @@ function renderNews(data) {
   <div id="container">
           <h2>${data.title}</h2>
           <p>Posted by ${data.by} | ${data.time}</p>
-          <button><a href="${data.url}" target="_blank">Read more</a></button>
+          <button><a href="${data.url}" target="_blank">Read article</a></button>
         </div>`
 }
 
