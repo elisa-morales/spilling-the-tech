@@ -92,7 +92,7 @@ main {
 }
 
 #container > p {
-  margin-bottom: 0.5em;
+  margin: 0.5em 0;
 }
 
 button {
@@ -119,6 +119,7 @@ button:active {
 #load-more-btn {
   background-color: $color-title;
   border: none;
+  visibility: hidden;
 }
 
 footer {
@@ -129,6 +130,7 @@ footer {
   justify-content: space-between;
   padding: 1em;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  visibility: hidden;
 }
 
 footer > p,
@@ -185,7 +187,7 @@ footer > p,
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
   h3 {
     font-size: 1.125rem;
