@@ -5,7 +5,8 @@ import "./styles/main.scss"
 let count = 0
 let newsDay = ""
 let newsTime = ""
-const baseUrl = "https://hacker-news.firebaseio.com/v0/"
+const API_URL = "https://hacker-news.firebaseio.com/v0/newstories"
+const API_ID = "https://hacker-news.firebaseio.com/v0/item"
 const loader = document.getElementById("loading")
 const loadMoreBtn = document.getElementById("load-more-btn")
 const footer = document.getElementById("footer-content")
@@ -14,7 +15,7 @@ loadMoreBtn.addEventListener("click", loadMore)
 
 async function fetchAllNews() {
   await axios
-    .get(`${baseUrl}newstories.json`)
+    .get(`${API_URL}.json`)
     .then((res) => {
       const newsData = _.get(res, "data")
       newsData.slice(count, count + 10).forEach(fetchNewsId)
@@ -32,7 +33,7 @@ async function fetchAllNews() {
 async function fetchNewsId(id) {
   loader.classList.add("display")
   await axios
-    .get(`${baseUrl}item/${id}.json`)
+    .get(`${API_ID}/${id}.json`)
     .then((res) => {
       const itemData = _.get(res, "data")
 
@@ -59,10 +60,11 @@ function getDate(data) {
 function renderNews(data) {
   document.getElementById("news-wrapper").innerHTML += `
   <div id="container">
-          <h2>${data.title}</h2>
-          <p>Posted by ${data.by} | ⌚ ${newsDay}, ${newsTime}</p>
-          <button><a href="${data.url}" target="_blank">Read article</a></button>
-        </div>`
+    <h2>${data.title}</h2>
+    <p>Posted by ${data.by} | ⌚ ${newsDay}, ${newsTime}</p>
+    <button id="read-more-btn"><a href="${data.url}" target="_blank">Read article</a></button>
+  </div>
+  `
 }
 
 function loadMore() {
