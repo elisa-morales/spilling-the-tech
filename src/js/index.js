@@ -2,14 +2,14 @@ import axios from "axios"
 var get = require("lodash.get")
 import "../styles/main.scss"
 
-let count = 0
-let newsDay = ""
-let newsTime = ""
 const API_URL = process.env.API_URL
 const API_ID = process.env.API_ID
 const loader = document.getElementById("loading")
 const loadMoreBtn = document.getElementById("load-more-btn")
 const footer = document.getElementById("footer-content")
+let count = 0
+let newsDay = ""
+let newsTime = ""
 
 loadMoreBtn.addEventListener("click", loadMore)
 
