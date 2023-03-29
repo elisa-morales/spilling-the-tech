@@ -1,5 +1,5 @@
 import axios from "axios"
-import _ from "lodash"
+var get = require("lodash.get")
 import "./styles/main.scss"
 
 let count = 0
@@ -17,7 +17,7 @@ async function fetchAllNews() {
   await axios
     .get(`${API_URL}.json`)
     .then((res) => {
-      const newsData = _.get(res, "data")
+      const newsData = get(res, "data")
       newsData.slice(count, count + 10).forEach(fetchNewsId)
 
       if (newsData === 0) {
@@ -35,7 +35,7 @@ async function fetchNewsId(id) {
   await axios
     .get(`${API_ID}/${id}.json`)
     .then((res) => {
-      const itemData = _.get(res, "data")
+      const itemData = get(res, "data")
 
       getDate(itemData)
       renderNews(itemData)
