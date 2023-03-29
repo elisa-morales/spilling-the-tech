@@ -176,6 +176,21 @@ footer > p,
   visibility: visible;
 }
 
+.loading-btn {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #e1e8f3;
+  border-top: 6px solid $color-btn;
+  border-radius: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  animation: spin 1s infinite linear;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);

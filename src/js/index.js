@@ -57,6 +57,13 @@ function getDate(data) {
   newsTime = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
 }
 
+function loadMore() {
+  loadMoreBtn.classList.add("loading-btn")
+  count += 10
+  fetchAllNews()
+  loadMoreBtn.classList.remove("loading-btn")
+}
+
 function renderNews(data) {
   document.getElementById("news-wrapper").innerHTML += `
   <div id="container">
@@ -65,12 +72,6 @@ function renderNews(data) {
     <button id="read-more-btn"><a href="${data.url}" target="_blank">Read article</a></button>
   </div>
   `
-}
-
-function loadMore() {
-  count += 10
-  fetchAllNews()
-  renderNews()
 }
 
 fetchAllNews()
