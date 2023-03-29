@@ -1,6 +1,6 @@
 import axios from "axios"
 var get = require("lodash.get")
-import "./styles/main.scss"
+import "../styles/main.scss"
 
 let count = 0
 let newsDay = ""
