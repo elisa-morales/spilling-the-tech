@@ -61,14 +61,16 @@ function loadMore() {
   loadMoreBtn.classList.add("loading-btn")
   count += 10
   fetchAllNews()
-  loadMoreBtn.classList.remove("loading-btn")
+  setTimeout(() => {
+    loadMoreBtn.classList.remove("loading-btn")
+  }, 1000)
 }
 
 function renderNews(data) {
   document.getElementById("news-wrapper").innerHTML += `
   <div id="container">
     <h2>${data.title}</h2>
-    <p>Posted by ${data.by} | 🕦 ${newsDay}, ${newsTime}</p>
+    <p>Posted by ${data.by} | ⌚ ${newsDay}, ${newsTime}</p>
     <button id="read-more-btn"><a href="${data.url}" target="_blank">Read article</a></button>
   </div>
   `

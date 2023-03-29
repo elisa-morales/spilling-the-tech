@@ -102,6 +102,7 @@ button {
   font-weight: 400;
   padding: 0.75em 1.25rem;
   border: none;
+  outline: none;
   border-radius: 0.25rem;
   transition: 0.3s;
   box-shadow: 0px 15px 20px rgba(55, 56, 56, 0.08);
@@ -117,9 +118,34 @@ button:active {
 }
 
 #load-more-btn {
+  position: relative;
   background-color: $color-title;
   border: none;
+  outline: none;
+}
+
+#load-more-btn > span {
+  color: #fff;
+}
+
+.loading-btn > span {
   visibility: hidden;
+}
+
+.loading-btn::after {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 5px solid #e1e8f3;
+  border-top: 6px solid $color-btn;
+  border-radius: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  animation: spin 1s infinite linear;
 }
 
 footer {
@@ -136,6 +162,7 @@ footer {
 footer > p,
 #social {
   font-size: 14px;
+  line-height: 1.2em;
 }
 
 #social {
@@ -176,21 +203,6 @@ footer > p,
   visibility: visible;
 }
 
-.loading-btn {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  border: 5px solid #e1e8f3;
-  border-top: 6px solid $color-btn;
-  border-radius: 100%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  animation: spin 1s infinite linear;
-}
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -204,12 +216,17 @@ footer > p,
   h1 {
     font-size: 2rem;
   }
+
   h3 {
     font-size: 1.125rem;
   }
 
   #news-wrapper {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  #container {
+    max-width: 425px;
   }
 }
 
