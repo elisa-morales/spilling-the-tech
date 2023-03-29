@@ -5,8 +5,8 @@ import "./styles/main.scss"
 let count = 0
 let newsDay = ""
 let newsTime = ""
-const API_URL = "https://hacker-news.firebaseio.com/v0/newstories"
-const API_ID = "https://hacker-news.firebaseio.com/v0/item"
+const API_URL = process.env.API_URL
+const API_ID = process.env.API_ID
 const loader = document.getElementById("loading")
 const loadMoreBtn = document.getElementById("load-more-btn")
 const footer = document.getElementById("footer-content")

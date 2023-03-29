@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter",
+  "name": "spilling-the-tech",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.1",
