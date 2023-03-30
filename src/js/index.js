@@ -1,6 +1,6 @@
 import axios from "axios"
 var get = require("lodash.get")
-import "../assets/scss/main.scss"
+import "../scss/main.scss"
 
 const API_URL = process.env.API_URL
 const API_ID = process.env.API_ID
