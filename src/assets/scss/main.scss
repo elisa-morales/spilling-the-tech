@@ -1,23 +1,6 @@
+@import "../scss/resets";
+@import "../scss/variables";
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap");
-
-$body-font: "Karla", sans-serif;
-$first-color: #f3d8dc;
-$second-color: #e6b2b9;
-$color-btn: #842f3b;
-$color-title: #be4153;
-$dark-color: #363334;
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: $body-font;

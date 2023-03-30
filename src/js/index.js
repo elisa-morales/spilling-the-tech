@@ -1,6 +1,6 @@
 import axios from "axios"
 var get = require("lodash.get")
-import "../styles/main.scss"
+import "../assets/scss/main.scss"
 
 const API_URL = process.env.API_URL
 const API_ID = process.env.API_ID
@@ -27,7 +27,6 @@ async function fetchAllNews() {
     .catch((err) => {
       console.log(err)
     })
-    .finally(() => {})
 }
 
 async function fetchNewsId(id) {
