@@ -25,7 +25,7 @@ async function fetchAllNews() {
       }
     })
     .catch((err) => {
-      console.log(err)
+      alert(`Something went wrong: ${err}`)
     })
 }
 
@@ -40,7 +40,7 @@ async function fetchNewsId(id) {
       renderNews(itemData)
     })
     .catch((err) => {
-      console.log(err)
+      alert(`Something went wrong: ${err}`)
     })
     .finally(() => {
       loader.classList.remove("display")
