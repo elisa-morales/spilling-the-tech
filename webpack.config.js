@@ -41,7 +41,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Spilling the Tech",
       filename: "index.html",
-      template: "src/template.html",
+      template: "src/index.html",
       favicon: "src/img/favicon.ico",
     }),
     new Dotenv({
