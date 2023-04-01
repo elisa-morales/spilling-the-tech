@@ -1,6 +1,7 @@
 const path = require("path")
 const Dotenv = require("dotenv-webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   mode: "development",
@@ -26,6 +27,10 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -44,6 +49,7 @@ module.exports = {
       template: "src/index.html",
       favicon: "src/img/favicon.ico",
     }),
+    new MiniCssExtractPlugin(),
     new Dotenv({
       systemvars: true,
       silent: true,
