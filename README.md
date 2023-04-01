@@ -11,5 +11,10 @@ Il sito si compone di una single page responsive sulla quale viene caricato l'el
 
 # Screenshots
 
+Nest Hub Max (1280 x 800)
+
+<img src="https://github.com/elisa-morales/spilling-the-tech/blob/main/screenshots/laptop.png">
+<img src="https://github.com/elisa-morales/spilling-the-tech/blob/main/screenshots/laptop-bottom.png">
+
 # Link 
 * Netlify URL: [<a href="https://spilling-the-tech.netlify.app/" target="_blank">https://spilling-the-tech.netlify.app/</a>]
